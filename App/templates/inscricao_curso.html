@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/static/icon_bacharel.png" alt="" width="72" height="72">
+        <h2>Inscrição</h2>
+        <p class="lead">Selecione o curso que você deseja se matricular.</p>
+      </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Formulario</h4>
+          <form method="post">{% csrf_token %}
+
+            <div class="mb-3">
+              <label for="n_curso">Codigo do curso</label>
+              <input type="text" class="form-control" id="n_curso" name="n_curso" placeholder="Código (Apenas números)" required>
+              <div class="invalid-feedback">
+                Por favor insira o codigo do curso que você deseja se matricular.
+              </div>
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Solicitar matricula</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock content %}

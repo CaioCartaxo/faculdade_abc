@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/static/icon_cadastro.png" alt="" width="72" height="72">
+        <h2>Editar perfil</h2>
+        <p class="lead">Preencha os campos abaixo para atualizar ou completar os dados de seu perfil.</p>
+        <p class="lead">É de muita importancia que todos os seus dados estejam atualizados, principalmente para se matricular em algum curso!</p>
+      </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Formulario</h4>
+          <form method="post">{% csrf_token %}
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Primeiro nome" required>
+                <div class="invalid-feedback">
+                  Por favor insira o seu nome.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome completo" required>
+                <div class="invalid-feedback">
+                  Por favor insira o seu sobrenome.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nascimento">Data de nascimento</label>
+                <input type="text" class="form-control" id="nascimento" name="nascimento" placeholder="DD/MM/AAAA" required>
+                <div class="invalid-feedback">
+                  Por favor insira a data de nascimento no formato DD/MM/AAAA.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="profissao">Profissão</label>
+                <input type="text" class="form-control" id="profissao" name="profissao" placeholder="Profissão" required>
+                <div class="invalid-feedback">
+                  Por favor insira a sua profissão.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input type="email" class="form-control" id="email" name="email" placeholder="seu_email@exemplo.com" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Por favor insira o seu email.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="endereco">Endereço</label>
+                <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" required>
+                <div class="invalid-feedback">
+                  Por favor insira o nome da sua rua.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="n_endereco">Numero</label>
+                <input type="text" class="form-control" id="n_endereco" name="n_endereco" placeholder="Numero" required>
+                <div class="invalid-feedback">
+                  Por favor insira o numero da sua residencia.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" required>
+                <div class="invalid-feedback">
+                  Por favor insira o bairro de seu endereço.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="CEP">Cep</label>
+                <input type="text" class="form-control" id="CEP" name="CEP" placeholder="00000-000" required>
+                <div class="invalid-feedback">
+                  Por favor seu CEP.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cidade">Cidade</label>
+                <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" required>
+                <div class="invalid-feedback">
+                  Por favor insira a sua cidade.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="estado">Estado</label>
+                <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" required>
+                <div class="invalid-feedback">
+                  Por favor insira o estado de sua cidade.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="telefone">Telefone (fixo)</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(DDD)0000-0000" required>
+                <div class="invalid-feedback">
+                  Por favor insira o seu telefone.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="celular">Celular</label>
+                <input type="text" class="form-control" id="celular" name="celular" placeholder="(DDD)00000-0000" required>
+                <div class="invalid-feedback">
+                  Por favor insira o seu celular.
+                </div>
+              </div>
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Atualizar perfil</button>
+          </form>
+
+          <p></p>
+          <p>Para alterar sua senha <a href="#">aperte aqui.</a></p>
+          <p></p>
+
+        </div>
+      </div>
+
+    </div>
+
+{% endblock content %}

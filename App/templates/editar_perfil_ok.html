@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/static/icon_cadastro_ok.png" alt="" width="72" height="72">
+            <h2>Você acabou de atualizar os dados do seu usuario {{ request.user.first_name }}!</h2>
+            <p class="lead">Mantenha sempre seu perfil atualizado.</p>
+            <p><a style="color: #82b1ff" href="{% url 'index' %}">Pagina inicial</a></p>
+        </div>
+
+    </div>
+
+{% endblock content %}

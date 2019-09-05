@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/static/icon_bacharel.png" alt="" width="72" height="72">
+            <h2>Cursos de graduação</h2>
+            <p class="lead">Abaixo temos uma lista dos cursos de graduação abertos atualmente, com respectivas datas de inicio e quantidade de periodos.</p>
+            <p><a style="color: #82b1ff" href="{% url 'index' %}">Pagina inicial</a></p>
+        </div>
+
+        <table>
+            <tr>
+                <th>Cod. Curso</th>
+                <th>Inicio das aulas</th>
+                <th>Periodos</th>
+                <th>Custo</th>
+            </tr>
+            {% for cursos in object_list %}
+            <tr>
+                <td>{{ cursos.n_curso }}</td>
+                <td>{{ cursos.data_curso }}</td>
+                <td>{{ cursos.periodos_curso }}</td>
+                <td>{{ cursos.valor_curso }}</td>
+            </tr>
+            {% empty %}
+                <li>Sem cursos na lista.</li>
+            {% endfor %}
+        </table>
+
+    </div>
+
+{% endblock content %}

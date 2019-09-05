@@ -5,4 +5,10 @@ db.sqlite3
 App/migrations/
 App/migrations/__pycache__/
 App/__pychache__
+Projeto_Site/__pychache__
 App/__init__.py
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

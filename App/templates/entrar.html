@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/static/icon_login.png" alt="" width="72" height="72">
+        <h2>Entrar</h2>
+        <p class="lead">Digite seu nome de usuario e senha para entrar.</p>
+      </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3"></h4>
+          <form method="post">{% csrf_token %}
+
+            <div class="mb-3">
+              <label for="username">Nome de usuario (Username)</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Ex: jijadantas" required>
+              <div class="invalid-feedback">
+                Por favor digite um nome de usuario.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="senha">Senha</label>
+              <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
+              <div class="invalid-feedback">
+                Por favor digite sua senha.
+              </div>
+            </div>
+
+            <p></p>
+            <p>Esqueceu sua senha? <a href="#">Recupere sua senha!</a></p>
+            <p></p>
+
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Entrar</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock content %}

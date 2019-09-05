@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/static/icon_cadastro_ok.png" alt="" width="72" height="72">
+            <h2>Bem vindo, {{ request.user.first_name }}</h2>
+            <p class="lead">Você agora está conectado a sua conta.</p>
+            <p><a style="color: #82b1ff" href="{% url 'index' %}">Pagina inicial</a></p>
+        </div>
+
+    </div>
+
+{% endblock content %}

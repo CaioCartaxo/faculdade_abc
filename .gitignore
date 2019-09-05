@@ -1,0 +1,8 @@
+#DB
+db.sqlite3
+
+# Django
+App/migrations/
+App/migrations/__pycache__/
+App/__pychache__
+App/__init__.py

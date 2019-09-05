@@ -1,2 +1,4 @@
 # faculdade_abc
-Pagina WEB da Faculdade ABC
+Faculdade ABC WEB Site
+
+Example at AWS: http://faculdadeabc.us-east-1.elasticbeanstalk.com/

@@ -18,16 +18,16 @@ RUN apt-get update && \
 # ----------------------------------------
 
 ENV PYTHONUNBUFFERED 1
-RUN mkdir /var/Faculdade_web
-WORKDIR  /var/Faculdade_web
-COPY requirements.txt /var/Faculdade_web/requirements.txt
+RUN mkdir /var/current/Projeto_Site
+WORKDIR  /var/current/Projeto_Site
+COPY requirements.txt /var/current/Projeto_Site/requirements.txt
 RUN pip install -r requirements.txt
 
 # Step 2: Copy Django Code
 # ----------------------------------------
 
-COPY . /var/Faculdade_web/.
+COPY . /var/current/Projeto_Site/.
 
 EXPOSE 8080
 
-CMD ["/var/Faculdade_web/runserver.sh"]
+CMD ["/var/current/Projeto_Site/runserver.sh"]

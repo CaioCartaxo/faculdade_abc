@@ -3,7 +3,7 @@ db:
 web:
   build: .
   volumes:
-    - .:/var/Faculdade_web
+    - .:/var/current/Projeto_Site
   ports:
     - "8080:8080"
   links:

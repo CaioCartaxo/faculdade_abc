@@ -2,11 +2,11 @@
 db.sqlite3
 
 # Django
-App/migrations/
-App/migrations/__pycache__/
-App/__pychache__
+App_ABC/migrations/
+App_ABC/migrations/__pycache__/
+App_ABC/__pychache__
 Projeto_Site/__pychache__
-App/__init__.py
+App_ABC/__init__.py
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

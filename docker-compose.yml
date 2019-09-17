@@ -1,0 +1,17 @@
+db:
+  image: postgres:10.6
+web:
+  build: .
+  volumes:
+    - .:/var/Faculdade_web
+  ports:
+    - "8080:8080"
+  links:
+    - db:db
+  environment:
+    - DJANGO_SETTINGS_MODULE=Projeto_Site.settings
+    - RDS_DB_NAME=postgres
+    - RDS_USERNAME=faculdadeabc
+    - RDS_PASSWORD='abc123unipe'
+    - RDS_HOSTNAME=db
+    - RDS_PORT=5432

@@ -13,7 +13,7 @@ SECRET_KEY = '+m37bgtz^&#zojg2+e^95qrgxs+vwqb_h6wr5(!((ggs4utzkm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['abcvenv.np7mybgnux.us-east-1.elasticbeanstalk.com', 'localhost', 'app', '0.0.0.0']
+ALLOWED_HOSTS = ['faculdadeabc.us-east-1.elasticbeanstalk.com', 'localhost', 'app', '0.0.0.0']
 
 
 # Application definition

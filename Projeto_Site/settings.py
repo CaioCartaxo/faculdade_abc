@@ -14,7 +14,7 @@ SECRET_KEY = '+m37bgtz^&#zojg2+e^95qrgxs+vwqb_h6wr5(!((ggs4utzkm'
 DEBUG = True
 
 ALLOWED_HOSTS = ['faculdadeabc.us-east-1.elasticbeanstalk.com', 'localhost',
-                 'ec2-34-200-131-205.compute-1.amazonaws.com']
+                 'ec2-34-200-131-205.compute-1.amazonaws.com', 'app', '0.0.0.0']
 
 
 # Application definition
@@ -28,6 +28,31 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'App_ABC',
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'default': {
+            'format': '[DJANGO] %(levelname)s %(asctime)s %(module)s '
+                      '%(name)s.%(funcName)s:%(lineno)s: %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'default',
+        }
+    },
+    'loggers': {
+        '*': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        }
+    },
+}
 
 LOGIN_URL = '/entrar/'
 
@@ -65,35 +90,35 @@ WSGI_APPLICATION = 'Projeto_Site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'abc-db',
-            'USER': 'postgres',
-            'PASSWORD': 'abc123unipe',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': os.environ['RDS_DB_NAME'],
+#             'USER': os.environ['RDS_USERNAME'],
+#             'PASSWORD': os.environ['RDS_PASSWORD'],
+#             'HOST': os.environ['RDS_HOSTNAME'],
+#             'PORT': os.environ['RDS_PORT'],
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'abc-db',
+#             'USER': 'postgres',
+#             'PASSWORD': 'abc123unipe',
+#             'HOST': 'localhost',
+#             'PORT': '5432',
+#         }
+#     }
 
 
 # DATABASES = {

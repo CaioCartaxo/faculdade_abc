@@ -1,17 +1,29 @@
-db:
-  image: postgres:10.6
-web:
-  build: .
-  volumes:
-    - .:/var/current/Projeto_Site
-  ports:
-    - "8080:8080"
-  links:
-    - db:db
-  environment:
-    - DJANGO_SETTINGS_MODULE=Projeto_Site.settings
-    - RDS_DB_NAME=postgres
-    - RDS_USERNAME=faculdadeabc
-    - RDS_PASSWORD='abc123unipe'
-    - RDS_HOSTNAME=db
-    - RDS_PORT=5432
+# File structure version
+version: '3'
+
+services:
+  # Database based on official postgres image
+  db:
+    image: postgres
+    hostname: abc-db
+    envirement:
+      POSTGRES_DB: abcdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: abc123unipe
+
+
+  # Our django application
+  # Build from remote Dockerfile
+  # Connect local app folder with image folder, so changes will be pushed to image instantly
+  # Open port 8000
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: app
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

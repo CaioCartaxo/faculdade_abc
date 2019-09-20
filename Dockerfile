@@ -17,4 +17,6 @@ EXPOSE 8000
 
 # When container starts, this script will be executed.
 # Note that it is NOT executed during building
+CMD ["python", "manage.py", "makemigrations"]
+CMD ["python", "manage.py", "migrate"]
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

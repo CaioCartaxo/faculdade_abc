@@ -1,0 +1,12 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "volumes": [
+    {
+      "name": "/var/app/current",
+      "host": {
+        "sourcePath": "/path/on/host/instance"
+      }
+    }
+  ],
+  "Logging": "/var/eb_log"
+}

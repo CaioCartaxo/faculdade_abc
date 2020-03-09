@@ -15,6 +15,11 @@ RUN pip install -r requirements.txt
 # Open port 8000 to outside world
 EXPOSE 8000
 
+# List of application servers
+upstream docker {
+    server 127.0.0.1:8080;
+}
+
 # When container starts, this script will be executed.
 # Note that it is NOT executed during building
 CMD ["python", "manage.py", "makemigrations"]

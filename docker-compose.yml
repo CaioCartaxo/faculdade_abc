@@ -7,7 +7,7 @@ services:
     image: postgres
     hostname: abc-db
     envirement:
-      POSTGRES_DB: abcdb
+      POSTGRES_DB: abc-db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: abc123unipe
 

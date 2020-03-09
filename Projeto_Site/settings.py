@@ -13,7 +13,7 @@ SECRET_KEY = '+m37bgtz^&#zojg2+e^95qrgxs+vwqb_h6wr5(!((ggs4utzkm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['faculdadeabc.us-east-1.elasticbeanstalk.com', 'localhost', 'app', '0.0.0.0', 'abcvenv.np7mybgnux.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['faculdadeabc.sa-east-1.elasticbeanstalk.com', 'localhost', 'app', '0.0.0.0']
 
 
 # Application definition
@@ -123,10 +123,10 @@ WSGI_APPLICATION = 'Projeto_Site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'abcdb',
+        'NAME': 'abc-db',
         'USER': 'postgres',
         'PASSWORD': 'abc123unipe',
-        'HOST': 'abcdb.cou418koxczl.us-east-1.rds.amazonaws.com',
+        'HOST': 'abc-db.cmowtcevjnal.sa-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

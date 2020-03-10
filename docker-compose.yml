@@ -5,9 +5,9 @@ services:
   # Database based on official postgres image
   db:
     image: postgres
-    hostname: abc-db
+    hostname: abcdb
     envirement:
-      POSTGRES_DB: abc-db
+      POSTGRES_DB: abcdb
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: abc123unipe
 

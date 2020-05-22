@@ -122,11 +122,11 @@ WSGI_APPLICATION = 'Projeto_Site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'abcdb',
-        'USER': 'postgres',
-        'PASSWORD': 'abc123unipe',
-        'HOST': 'abcdb.cmowtcevjnal.sa-east-1.rds.amazonaws.com',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '',
+        'USER': 'abc',
+        'PASSWORD': 'abcdb123',
+        'HOST': 'abc-db.cmowtcevjnal.sa-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

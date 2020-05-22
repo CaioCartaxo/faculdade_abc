@@ -3,13 +3,14 @@ version: '3'
 
 services:
   # Database based on official postgres image
-  db:
-    image: postgres
-    hostname: abcdb
-    envirement:
-      POSTGRES_DB: abcdb
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: abc123unipe
+#  db:
+#    image: postgres
+#    hostname: abcdb
+#    environment:
+#      POSTGRES_DB: abcdb
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: abc123unipe
+#      POSTGRES_HOST: abcdb.cmowtcevjnal.sa-east-1.rds.amazonaws.com
 
 
   # Our django application
@@ -25,5 +26,5 @@ services:
       - ./app:/app
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+#    depends_on:
+#      - db

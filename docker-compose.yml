@@ -1,0 +1,30 @@
+# File structure version
+version: '3'
+
+services:
+  # Database based on official postgres image
+#  db:
+#    image: postgres
+#    hostname: abcdb
+#    environment:
+#      POSTGRES_DB: abcdb
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: abc123unipe
+#      POSTGRES_HOST: abcdb.cmowtcevjnal.sa-east-1.rds.amazonaws.com
+
+
+  # Our django application
+  # Build from remote Dockerfile
+  # Connect local app folder with image folder, so changes will be pushed to image instantly
+  # Open port 8000
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: app
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+#    depends_on:
+#      - db

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/static/icon_cadastro.png" alt="" width="72" height="72">
+        <h2>Cadastro</h2>
+        <p class="lead">Preencha os campos abaixo para realizar o cadastro.</p>
+      </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Formulario</h4>
+          <form method="post">{% csrf_token %}
+
+            <div class="mb-3">
+              <label for="username">Nome de usuario (Username)</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Usuario" required>
+              <div class="invalid-feedback">
+                Por favor digite um nome de usuario.
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Primeiro nome" required>
+                <div class="invalid-feedback">
+                  Por favor digite o seu primeiro nome.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome completo" required>
+                <div class="invalid-feedback">
+                  Por favor digite o seu sobrenome.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input type="email" class="form-control" id="email" name="email" placeholder="seu_email@exemplo.com" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Por favor digite o seu email.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="senha1">Senha</label>
+              <input type="password" class="form-control" id="senha1" name="senha1" placeholder="Digite sua senha" required>
+              <div class="invalid-feedback">
+                Por favor digite sua senha.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="senha2">Repetir senha</label>
+              <input type="password" class="form-control" id="senha2" name="senha2" placeholder="Repita sua senha" required>
+              <div class="invalid-feedback">
+                Por favor repita sua senha.
+              </div>
+            </div>
+
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Efetuar inscrição</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock content %}

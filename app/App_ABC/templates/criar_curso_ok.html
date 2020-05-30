@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <-- Topo da pagina -->
+    <div class="container">
+
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/static/icon_cadastro_ok.png" alt="" width="72" height="72">
+            <h2>Você acabou de cadastrar um novo curso.</h2>
+            <p class="lead">Agora os interessados podem se matricular nesse curso.</p>
+            <p><a style="color: #82b1ff" href="{% url 'index' %}">Pagina inicial</a></p>
+        </div>
+
+    </div>
+
+{% endblock content %}

@@ -1,4 +1,4 @@
 # faculdade_abc
-Faculdade ABC web site repository
+Projeto desenvolvido para ser o portal da Faculdade ABC
 
-* Example at AWS: http://faculdadeabc.us-east-1.elasticbeanstalk.com/
+* Esse repositorio se trata de um antigo código usado em minha apresentação do TCC, se tratando assim de uma faculdade ficticia e o código não será atualizado.
